@@ -1,0 +1,10 @@
+/vendor/lib/modules/lcd.ko:
+/vendor/lib/modules/msm-geni-ir.ko:
+/vendor/lib/modules/mpq-adapter.ko:
+/vendor/lib/modules/msm_11ad_proxy.ko:
+/vendor/lib/modules/rdbg.ko:
+/vendor/lib/modules/mmc_test.ko:
+/vendor/lib/modules/br_netfilter.ko:
+/vendor/lib/modules/wil6210.ko: /vendor/lib/modules/msm_11ad_proxy.ko
+/vendor/lib/modules/gspca_main.ko:
+/vendor/lib/modules/mpq-dmx-hw-plugin.ko: /vendor/lib/modules/mpq-adapter.ko

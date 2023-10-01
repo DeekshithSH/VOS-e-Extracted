@@ -1,3 +1,13 @@
+check() {
+    for fname in $(find system vendor -size +100M)
+    do
+        fhash=$(sha256sum $fname)
+        rm "$fname"
+        echo "removed $fname"
+        echo -e "Removed becuase it excedes 100MB Limit\nsha256: $fhash" > "$fname"
+    done
+}
+
 read -p "Enter Build Name: " filename
 unzip $filename -d vose
 
@@ -59,6 +69,11 @@ sudo mount -rw vose/vendor.img vendor
 
 
 sudo chown -R $UID system vendor
+
+check
+
+echo "Storing Hash"
+find . -type f -not -path '*/.git/*' -exec sha256sum {} \; > sha256sum.txt
 
 echo "git add"
 git add .
