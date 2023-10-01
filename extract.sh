@@ -87,4 +87,5 @@ echo "unmount"
 sudo umount "system"
 sudo umount "vendor"
 
-rm -r system vendor vose
+rm -rf system vendor vose
+git push
