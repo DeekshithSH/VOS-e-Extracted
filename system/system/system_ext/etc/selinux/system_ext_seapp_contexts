@@ -19,4 +19,5 @@ user=_app seinfo=platform name=com.qti.qualcomm.mstatssystemservice domain=vendo
 user=system seinfo=platform name=vendor.qti.qesdk.sysservice isPrivApp=true domain=vendor_qesdk_app type=system_app_data_file
 user=_app seinfo=platform name=com.qualcomm.qti.workloadclassifier domain=vendor_wlc_app type=app_data_file levelFrom=all
 user=_app seinfo=platform name=com.qualcomm.qti.xrcb domain=vendor_xrcb_app type=app_data_file levelFrom=all
+user=_app isPrivApp=true seinfo=mediashell domain=mediashell_app name=com.google.android.apps.mediashell type=app_data_file levelFrom=all
 user=_app isPrivApp=true seinfo=platform name=com.voltage.updater domain=updater_app type=app_data_file levelFrom=user
