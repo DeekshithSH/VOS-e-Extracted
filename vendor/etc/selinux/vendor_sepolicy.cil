@@ -135,7 +135,6 @@
 (genfscon sysfs "/devices/soc/soc:qcom,memlat-cpu4/devfreq" (u object_r vendor_sysfs_devfreq ((s0) (s0))))
 (genfscon sysfs "/devices/soc/soc:qcom,memlat-cpu6/devfreq" (u object_r vendor_sysfs_devfreq ((s0) (s0))))
 (genfscon sysfs "/devices/soc/soc:hbtp/secure_touch_enable" (u object_r vendor_hbtp_kernel_sysfs ((s0) (s0))))
-(genfscon sysfs "/class/power_supply/battery/input_suspend" (u object_r vendor_sysfs_battery_supply ((s0) (s0))))
 (genfscon sysfs "/devices/virtual/misc/msm_g711alaw/wakeup" (u object_r sysfs_wakeup ((s0) (s0))))
 (genfscon sysfs "/devices/virtual/misc/msm_g711mlaw/wakeup" (u object_r sysfs_wakeup ((s0) (s0))))
 (genfscon sysfs "/devices/platform/soc/a600000.ssusb/mode" (u object_r vendor_sysfs_usb_device ((s0) (s0))))
