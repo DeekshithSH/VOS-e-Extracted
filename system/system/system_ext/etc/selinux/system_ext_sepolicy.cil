@@ -301,7 +301,7 @@
 (expandtypeattribute (hal_lineage_health) true)
 (typeattribute hal_lineage_health_client)
 (expandtypeattribute (hal_lineage_health_client) true)
-(typeattributeset hal_lineage_health_client (system_server ))
+(typeattributeset hal_lineage_health_client (system_app system_server ))
 (typeattribute hal_lineage_health_server)
 (expandtypeattribute (hal_lineage_health_server) false)
 (typeattribute hal_lineage_livedisplay)

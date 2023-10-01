@@ -23800,6 +23800,7 @@
 (allow otapreopt_chroot postinstall_file (dir (ioctl read getattr lock open watch watch_reads search)))
 (allow otapreopt_chroot apexd_prop (file (read getattr map open)))
 (allow otapreopt_chroot postinstall (fd (use)))
+(allow otapreopt_chroot postinstall (fifo_file (read write getattr)))
 (allow otapreopt_chroot update_engine (fd (use)))
 (allow otapreopt_chroot update_engine (fifo_file (write)))
 (allow otapreopt_chroot postinstall_dexopt_exec (file (read getattr map execute open)))
@@ -26931,7 +26932,8 @@
 (neverallow system_server base_typeattr_899 (anon_inode (ioctl read write create getattr setattr lock relabelfrom relabelto append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads)))
 ;;* lme
 
-(allow system_server zygote_tmpfs (file (read map)))
+(allow system_server tmpfs (file (read write map)))
+(allow system_server zygote_tmpfs (file (read write map)))
 (allow system_server appdomain_tmpfs (file (read write getattr map)))
 (allow system_server proc_filesystems (file (ioctl read getattr lock map open watch watch_reads)))
 (allow system_server incremental_control_file (file (ioctl read getattr lock map open watch watch_reads)))
@@ -27650,7 +27652,7 @@
 (allow system_server sysfs_zram (dir (search)))
 (allow system_server sysfs_zram (file (ioctl read write getattr lock append map open watch watch_reads)))
 (allow system_server system_server_service (service_manager (add find)))
-;;* lmx 901 system/sepolicy/private/system_server.te
+;;* lmx 902 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_284 system_server_service (service_manager (add)))
 ;;* lme
@@ -27695,7 +27697,7 @@
 (allow system_server logd_service (service_manager (find)))
 (allow system_server profcollectd_service (service_manager (find)))
 (allow system_server batteryproperties_service (service_manager (add find)))
-;;* lmx 943 system/sepolicy/private/system_server.te
+;;* lmx 944 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_284 batteryproperties_service (service_manager (add)))
 ;;* lme
@@ -27844,49 +27846,49 @@
 (allow system_server profcollectd_data_file (dir (ioctl read getattr lock open watch watch_reads search)))
 (allow system_server profcollectd_data_file (file (ioctl read getattr lock map open watch watch_reads)))
 (allow system_server profcollectd_data_file (lnk_file (ioctl read getattr lock map open watch watch_reads)))
-;;* lmx 1240 system/sepolicy/private/system_server.te
+;;* lmx 1241 system/sepolicy/private/system_server.te
 
 (neverallow system_server sdcard_type (dir (read write open)))
 (neverallow system_server fuse (dir (read write open)))
 ;;* lme
 
-;;* lmx 1241 system/sepolicy/private/system_server.te
+;;* lmx 1242 system/sepolicy/private/system_server.te
 
 (neverallow system_server sdcard_type (file (ioctl read write getattr lock append map open watch watch_reads)))
 (neverallow system_server fuse (file (ioctl read write getattr lock append map open watch watch_reads)))
 ;;* lme
 
-;;* lmx 1251 system/sepolicy/private/system_server.te
+;;* lmx 1252 system/sepolicy/private/system_server.te
 
 (neverallow system_server base_typeattr_900 (file (create unlink link open)))
 ;;* lme
 
-;;* lmx 1262 system/sepolicy/private/system_server.te
+;;* lmx 1263 system/sepolicy/private/system_server.te
 
 (neverallow system_server base_typeattr_901 (file (execute_no_trans)))
 ;;* lme
 
-;;* lmx 1266 system/sepolicy/private/system_server.te
+;;* lmx 1267 system/sepolicy/private/system_server.te
 
 (neverallow system_server base_typeattr_902 (process (transition)))
 ;;* lme
 
-;;* lmx 1267 system/sepolicy/private/system_server.te
+;;* lmx 1268 system/sepolicy/private/system_server.te
 
 (neverallow system_server base_typeattr_197 (process (dyntransition)))
 ;;* lme
 
-;;* lmx 1270 system/sepolicy/private/system_server.te
+;;* lmx 1271 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_903 system_ndebug_socket (sock_file (write open)))
 ;;* lme
 
-;;* lmx 1280 system/sepolicy/private/system_server.te
+;;* lmx 1281 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_904 system_unsolzygote_socket (sock_file (write open)))
 ;;* lme
 
-;;* lmx 1304 system/sepolicy/private/system_server.te
+;;* lmx 1305 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_905 device_config_activity_manager_native_boot_prop (property_service (set)))
 (neverallow base_typeattr_905 device_config_input_native_boot_prop (property_service (set)))
@@ -27905,38 +27907,38 @@
 (neverallow base_typeattr_905 device_config_swcodec_native_prop (property_service (set)))
 ;;* lme
 
-;;* lmx 1310 system/sepolicy/private/system_server.te
+;;* lmx 1311 system/sepolicy/private/system_server.te
 
 (neverallow system_server dex2oat_exec (file (execute execute_no_trans)))
 ;;* lme
 
-;;* lmx 1315 system/sepolicy/private/system_server.te
+;;* lmx 1316 system/sepolicy/private/system_server.te
 
 (neverallow system_server data_file_type (file (execute execute_no_trans)))
 ;;* lme
 
-;;* lmx 1322 system/sepolicy/private/system_server.te
+;;* lmx 1323 system/sepolicy/private/system_server.te
 
 (neverallow system_server base_typeattr_906 (blk_file (write create setattr relabelfrom append unlink link rename)))
 ;;* lme
 
-;;* lmx 1323 system/sepolicy/private/system_server.te
+;;* lmx 1324 system/sepolicy/private/system_server.te
 
 (neverallow system_server base_typeattr_907 (blk_file (ioctl read getattr lock map open watch watch_reads)))
 ;;* lme
 
-;;* lmx 1331 system/sepolicy/private/system_server.te
+;;* lmx 1332 system/sepolicy/private/system_server.te
 
 (neverallow system_server self (process (execmem)))
 ;;* lme
 
-;;* lmx 1334 system/sepolicy/private/system_server.te
+;;* lmx 1335 system/sepolicy/private/system_server.te
 
 (neverallow system_server ashmem_device (chr_file (execute)))
 (neverallow system_server ashmem_libcutils_device (chr_file (execute)))
 ;;* lme
 
-;;* lmx 1337 system/sepolicy/private/system_server.te
+;;* lmx 1338 system/sepolicy/private/system_server.te
 
 (neverallow system_server system_server_tmpfs (file (execute)))
 ;;* lme
@@ -28011,34 +28013,34 @@
 (allow system_server init (unix_stream_socket (connectto)))
 (allow system_server userspace_reboot_log_prop (property_service (set)))
 (allow system_server userspace_reboot_log_prop (file (read getattr map open)))
-;;* lmx 1435 system/sepolicy/private/system_server.te
+;;* lmx 1436 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_691 system_jvmti_agent_prop (file (ioctl read write create setattr lock relabelfrom append unlink link rename open watch watch_mount watch_sb watch_with_perm watch_reads)))
 ;;* lme
 
 (allow system_server proc_pressure_mem (file (ioctl read write getattr lock append map open watch watch_reads)))
-;;* lmx 1442 system/sepolicy/private/system_server.te
+;;* lmx 1443 system/sepolicy/private/system_server.te
 
 (neverallow system_server dexoptanalyzer_exec (file (execute execute_no_trans)))
 ;;* lme
 
-;;* lmx 1445 system/sepolicy/private/system_server.te
+;;* lmx 1446 system/sepolicy/private/system_server.te
 
 (neverallow system_server base_typeattr_284 (process (ptrace)))
 ;;* lme
 
-;;* lmx 1449 system/sepolicy/private/system_server.te
+;;* lmx 1450 system/sepolicy/private/system_server.te
 
 (neverallow system_server system_server (capability (sys_resource)))
 (neverallow system_server system_server (cap_userns (sys_resource)))
 ;;* lme
 
-;;* lmx 1452 system/sepolicy/private/system_server.te
+;;* lmx 1453 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_287 password_slot_metadata_file (dir (ioctl read write create getattr setattr lock relabelfrom relabelto append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads add_name remove_name reparent search rmdir)))
 ;;* lme
 
-;;* lmx 1457 system/sepolicy/private/system_server.te
+;;* lmx 1458 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_287 password_slot_metadata_file (file (ioctl read write create setattr lock relabelfrom append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads execute_no_trans entrypoint)))
 (neverallow base_typeattr_287 password_slot_metadata_file (lnk_file (ioctl read write create setattr lock relabelfrom append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads)))
@@ -28046,7 +28048,7 @@
 (neverallow base_typeattr_287 password_slot_metadata_file (fifo_file (ioctl read write create setattr lock relabelfrom append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads)))
 ;;* lme
 
-;;* lmx 1458 system/sepolicy/private/system_server.te
+;;* lmx 1459 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_287 password_slot_metadata_file (file (ioctl read write create getattr setattr lock relabelfrom relabelto append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads execute_no_trans entrypoint)))
 (neverallow base_typeattr_287 password_slot_metadata_file (lnk_file (ioctl read write create getattr setattr lock relabelfrom relabelto append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads)))
@@ -28054,12 +28056,12 @@
 (neverallow base_typeattr_287 password_slot_metadata_file (fifo_file (ioctl read write create getattr setattr lock relabelfrom relabelto append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads)))
 ;;* lme
 
-;;* lmx 1461 system/sepolicy/private/system_server.te
+;;* lmx 1462 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_287 userspace_reboot_metadata_file (dir (ioctl read write create getattr setattr lock relabelfrom relabelto append map unlink link rename execute quotaon mounton audit_access open execmod watch watch_mount watch_sb watch_with_perm watch_reads add_name remove_name reparent search rmdir)))
 ;;* lme
 
-;;* lmx 1462 system/sepolicy/private/system_server.te
+;;* lmx 1463 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_287 userspace_reboot_metadata_file (file (ioctl read write create setattr lock relabelfrom append unlink link rename open watch watch_mount watch_sb watch_with_perm watch_reads)))
 ;;* lme
@@ -28068,48 +28070,48 @@
 (allow system_server init (unix_stream_socket (connectto)))
 (allow system_server binder_cache_system_server_prop (property_service (set)))
 (allow system_server binder_cache_system_server_prop (file (read getattr map open)))
-;;* lmx 1467 system/sepolicy/private/system_server.te
+;;* lmx 1468 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_287 binder_cache_system_server_prop (property_service (set)))
 ;;* lme
 
 (allow system_server self (perf_event (open cpu kernel write)))
-;;* lmx 1472 system/sepolicy/private/system_server.te
+;;* lmx 1473 system/sepolicy/private/system_server.te
 
 (neverallow system_server self (perf_event (tracepoint read)))
 ;;* lme
 
-;;* lmx 1475 system/sepolicy/private/system_server.te
+;;* lmx 1476 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_287 socket_hook_prop (property_service (set)))
 ;;* lme
 
-;;* lmx 1477 system/sepolicy/private/system_server.te
+;;* lmx 1478 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_287 boot_status_prop (property_service (set)))
 ;;* lme
 
-;;* lmx 1485 system/sepolicy/private/system_server.te
+;;* lmx 1486 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_691 wifi_config_prop (file (ioctl read write create setattr lock relabelfrom append unlink link rename open watch watch_mount watch_sb watch_with_perm watch_reads)))
 ;;* lme
 
-;;* lmx 1494 system/sepolicy/private/system_server.te
+;;* lmx 1495 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_908 sysfs_uhid (file (write create setattr relabelfrom append unlink link rename)))
 ;;* lme
 
-;;* lmx 1500 system/sepolicy/private/system_server.te
+;;* lmx 1501 system/sepolicy/private/system_server.te
 
 (neverallowx base_typeattr_284 binder_device (ioctl chr_file ((range 0x620e 0x620f))))
 ;;* lme
 
-;;* lmx 1503 system/sepolicy/private/system_server.te
+;;* lmx 1504 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_287 font_data_file (file (write create setattr relabelfrom append unlink link rename)))
 ;;* lme
 
-;;* lmx 1504 system/sepolicy/private/system_server.te
+;;* lmx 1505 system/sepolicy/private/system_server.te
 
 (neverallow base_typeattr_287 font_data_file (dir (write create setattr relabelfrom link rename add_name remove_name reparent rmdir)))
 ;;* lme

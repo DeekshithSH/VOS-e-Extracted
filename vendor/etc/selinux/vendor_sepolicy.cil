@@ -9896,6 +9896,7 @@
 (allow hwservicemanager_33_0 hal_vibrator_default (file (read map open)))
 (allow hwservicemanager_33_0 hal_vibrator_default (process (getattr)))
 (allow system_app_33_0 vendor_fm_radio_app_prop (file (read getattr map open)))
+(allow system_server_33_0 vendor_security_patch_level_prop_33_0 (file (read getattr map open)))
 (allow vendor_init_33_0 vendor_fm_radio_app_prop (property_service (set)))
 (allow vendor_init_33_0 vendor_fm_radio_app_prop (file (read getattr map open)))
 (typetransition mst_test_app mst_test_app anon_inode "[userfaultfd]" mst_test_app_userfaultfd)
