@@ -8,6 +8,8 @@ check() {
     done
 }
 
+rm -r system vendor
+
 read -p "Enter Build Name: " filename
 unzip $filename -d vose
 
