@@ -1,5 +1,5 @@
 check() {
-    for fname in $(find system vendor -size +100M)
+    for fname in $(find system vendor vose -size +100M)
     do
         fhash=$(sha256sum $fname)
         rm "$fname"
