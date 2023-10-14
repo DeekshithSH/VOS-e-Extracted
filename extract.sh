@@ -29,8 +29,8 @@ echo "Stoped at Extracting system.new.dat"
 exit 1
 fi
 
-echo "Removing system.new.dat"
-rm vose/system.new.dat
+echo "Removing system.new.dat and system.new.dat.br"
+rm vose/system.new.dat vose/system.new.dat.br
 if [ $? != 0 ]
 then
 echo "Stoping at Removing system.new.dat"
@@ -53,8 +53,8 @@ echo "Stoped at Extracting vendor.new.dat"
 exit 1
 fi
 
-echo "Removing vendor.new.dat"
-rm vose/vendor.new.dat
+echo "Removing vendor.new.dat and vendor.new.dat.br"
+rm vose/vendor.new.dat vose/vendor.new.dat.br
 if [ $? != 0 ]
 then
 echo "Stoping at Removing vendor.new.dat"

@@ -1,0 +1,9 @@
+ota-property-files=metadata:69:332,metadata.pb:469:210                 
+ota-required-cache=0
+ota-type=BLOCK
+post-build=Realme/voltage_r5x/r5x:13/TQ3A.230901.001.C1/MAdMiZ10060055:userdebug/release-keys
+post-build-incremental=1696553894
+post-sdk-level=33
+post-security-patch-level=2023-09-01
+post-timestamp=1696553734
+pre-device=r5x
